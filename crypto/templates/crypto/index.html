@@ -24,12 +24,10 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
+							<img src="{% static 'images/cwhite.png' %}" width=270 alt="" /><br/><br/><br/>
 							<h2>Cryptonite</h2>
 							<p>Predicting Ethereum pricing<br />
 							through tweet sentiment.</p>
-							<ul class="actions">
-								<li><a href="#" class="button special">Update Cards</a></li>
-							</ul>
 						</div>
 						<a href="#one" class="more scrolly">How it Works</a>
 					</section>
@@ -38,16 +36,15 @@
 					<section id="one" class="wrapper style1 special">
 						<div class="inner">
 							<header class="major">
-								<h2>We use ml and pull data from multiple sources <br />
-								to generate our live predictions.</h2>
-								<p>Our project relies on the advanced capabilities of Microsoft Azure, Twitter's API, and WCI's API to function.<br />
-								Interested in learning more? Read below to understand each step of the process.</p>
+								<h2>Cryptonite uses ml and numerous apis<br />
+								to generate its daily market prediction.</h2>
+								<p>Through the analysis of people's tweets, we were able to develop a model that predicts how the price of Ethereum will change from day to day.</p>
 							</header>
-							<ul class="icons major">
+							<!--<ul class="icons major">
 								<li><span class="icon fa-windows major style1"><span class="label">Lorem</span></span></li>
 								<li><span class="icon fa-code major style2"><span class="label">Ipsum</span></span></li>
 								<li><span class="icon fa-twitter major style3"><span class="label">Dolor</span></span></li>
-							</ul>
+							</ul>-->
 						</div>
 					</section>
 
@@ -55,16 +52,16 @@
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div class="image" id="graphHolder"><div id="graph" style="width:100%;height:100%;"></div></div><div class="content">
-								<h2>We started by<br />
-								identifying tweets</h2>
-								<p>Using Azure's <i>Machine Learning Studio</i>, we constructed an SVM to identify tweets as having positive or negative sentiment, and used Azure's <i>Web Service</i> to build an API to interact with it.</p>
+								<h2>90 days of<br />
+								Ethereum</h2>
+								<p>The graph to the left displays the price of Ethereum over the last ninety days (in USD). Due to its clear volatility, we believed its market swings to be heavily influenced by hope and fear.</p>
 							</div>
 						</section>
 						<section class="spotlight">
 							<div class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h2>90 days of<br />
+								human emotion</h2>
+								<p>To test our theory, we produced the graph to the left - 90 days of Ethereum Tweet sentiments on a scale from 0-1 (with 0 being entirely negative, and 1 being entirely positive).</p>
 							</div>
 						</section>
 						<section class="spotlight">
@@ -80,40 +77,41 @@
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>How does it work?</h2>
+								<p>Our project relies on the advanced capabilities of a number of web services to function.<br />
+								Interested in learning more? Read below to understand each step of the process.</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane-o">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon fa-smile-o">
+									<h3>Market Prediction</h3>
+									<p>Cryptonite anticipates market trends through the use of an advanced machine learning algorithm.</p>
 								</li>
 								<li class="icon fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+									<h3>Dynamic Site</h3>
+									<p>Cryptonite employs a Django back end to dynamically update as predictions change.</p>
 								</li>
-								<li class="icon fa-headphones">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon fa-windows">
+									<h3>2-class SVM</h3>
+									<p>Cryptonite uses an SVM built with Azure's Machine Learning Studio to identify tweet sentiment.</p>
 								</li>
-								<li class="icon fa-heart-o">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon fa-windows">
+									<h3>Private API</h3>
+									<p>Cryptonite uses a private API powered by Azure's Web Service to access data efficiently.</p>
 								</li>
-								<li class="icon fa-flag-o">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon fa-btc">
+									<h3>Crypto Tracking</h3>
+									<p>Cryptonite accesses the World Coin Index's API to record the price of Ethereum over the last 90 days.</p>
+								</li>
+								<li class="icon fa-server">
+									<h3>Accessible Anywhere</h3>
+									<p>Cryptonite is available in the entire world through the power of Heroku's free hosting plan.</p>
 								</li>
 							</ul>
 						</div>
 					</section>
 
 				<!-- CTA -->
+				<!--
 					<section id="cta" class="wrapper style4">
 						<div class="inner">
 							<header>
@@ -125,19 +123,12 @@
 								<li><a href="#" class="button fit">Learn More</a></li>
 							</ul>
 						</div>
-					</section>
+					</section>-->
 
 				<!-- Footer -->
 					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; TechSurfers - HackMIT 2017</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
@@ -153,29 +144,38 @@
 			<script src="{% static 'assets/js/main.js' %}"></script>
       <script src="https://d3js.org/d3.v3.min.js"></script>
       <style>
+			svg {
+				fill: #affecd
+			}
       path {
-  fill: none;
+  fill: #dddddd;
   stroke-width: 2px;
 }
+path.domain {
+	fill: none;
+}
   text {
-      fill: #ffffff
+      fill: #dddddd
     }
       </style>
 <script>
 function drawGraph() {
 d3.selectAll("svg > *").remove();
 document.getElementById('graph').innerHTML = "";
-	var m = [30, 80, 50, 80] // margins: top, left, bottom, right
+	var m = [45, 80, 50, 80] // margins: top, left, bottom, right
       var w = document.getElementById('graphHolder').getBoundingClientRect().width - 100;
-      var h = w/2 - m[0] - m[2] // height
+      var h = w/2 +50 - m[0] - m[2] // height
       console.log(w)
       console.log(h)
 
-      var x_data = []
+      var x_data = [0]
       for (i = 0; i < 90; i++) {
           x_data.push(i);
       }
-      var y_data = {{ethValues | safe}}
+			x_data.push(89)
+			var y_data = [0]
+      y_data = y_data.concat({{ethValues | safe}})
+			y_data.push(0)
       console.log(x_data)
       console.log(y_data)
       var x = d3.scale.linear().domain([0, d3.max(x_data)]).range([0, w])
@@ -195,11 +195,11 @@ document.getElementById('graph').innerHTML = "";
           .append("svg:g")
           .attr("transform", "translate(" + m[3] + "," + m[0] + ")")
 
-      var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
-      graph.append("svg:g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + (h) + ")")
-          .call(xAxis);
+      // var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+      // graph.append("svg:g")
+      //     .attr("class", "x axis")
+      //     .attr("transform", "translate(0," + (h) + ")")
+      //     .call(xAxis);
 
       // Add the y-axis
       var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
