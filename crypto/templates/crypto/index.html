@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>TechSurfers</title>
+		<title>Cryptonite</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -25,10 +25,17 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<img src="{% static 'images/cwhite.png' %}" width=270 alt="" /><br/><br/><br/>
+							{% if prediction == 1 %}
+							<img src="{% static 'images/cgreen.png' %}" width=270 alt="" /><br/><br/><br/>
 							<h2>Cryptonite</h2>
-							<p>Predicting Ethereum pricing<br />
-							through tweet sentiment.</p>
+							<p>Using tweet sentiment analysis, we expect<br />
+							Ethereum's price to <font style="color:#548235">increase</font> today to <font style="color:#548235">${{predictedValue}}</font>.</p>
+							{% else %}
+							<img src="{% static 'images/cred.png' %}" width=270 alt="" /><br/><br/><br/>
+							<h2>Cryptonite</h2>
+							<p>Using tweet sentiment analysis, we expect<br />
+							Ethereum's price to <font style="color:#ff0000">decrease</font> to <font style="color:#ff0000">${{predictedValue}}</font>.</p>
+							{% endif %}
 						</div>
 						<a href="#one" class="more scrolly">How it Works</a>
 					</section>
@@ -53,23 +60,16 @@
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div class="image" id="graphHolder"><div id="graph" style="width:100%;height:100%;"></div></div><div class="content">
-								<h2>90 days of<br />
+								<h2>7 days of<br />
 								Ethereum</h2>
-								<p>The graph to the left displays the price of Ethereum over the last ninety days (in USD). Due to its clear volatility, we believed its market swings to be heavily influenced by hope and fear.</p>
+								<p>The graph to the left displays the price of Ethereum over the last seven days (in USD). Due to its clear volatility, we believed its market swings to be heavily influenced by hope and fear.</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div><div class="content">
-								<h2>90 days of<br />
+							<div class="image" id="graphHolder2"><div id="graph2" style="width:100%;height:100%;"></div></div><div class="content">
+									<h2>7 days of<br />
 								human emotion</h2>
-								<p>To test our theory, we produced the graph to the left - 90 days of Ethereum Tweet sentiments on a scale from 0-1 (with 0 being entirely negative, and 1 being entirely positive).</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="{% static 'images/pic03.jpg' %}" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<p>To test our theory, we produced the graph to the left - seven days of Ethereum Tweet sentiments on a scale from 0-1 (with 0 being entirely negative, and 1 being entirely positive). The correlation with price is very strong (R^2 is greater than 0.44).</p>
 							</div>
 						</section>
 					</section>
@@ -211,6 +211,55 @@ document.getElementById('graph').innerHTML = "";
 
       graph.append("svg:path").attr("d", line(x_data))
           .attr("stroke", "#ffffff")
+
+					document.getElementById('graph2').innerHTML = "";
+						var m = [45, 80, 50, 80] // margins: top, left, bottom, right
+					      var w = document.getElementById('graphHolder2').getBoundingClientRect().width - 160;
+					      var h = w/2 +50 - m[0] - m[2] // height
+					      console.log(w)
+					      console.log(h)
+
+					      var x_data = [0]
+					      for (i = 0; i < 7; i++) {
+					          x_data.push(i);
+					      }
+								x_data.push(6)
+								var y_data = [0.5, 0.6099,0.6047,0.6131,0.6068,0.60000,0.59214,0.605706]
+								y_data.push(0.5)
+					      console.log(x_data)
+					      console.log(y_data)
+					      var x = d3.scale.linear().domain([0, d3.max(x_data)]).range([0, w])
+					      var y = d3.scale.linear().domain([d3.min(y_data), d3.max(y_data)]).range([h, 0])
+
+					      var line = d3.svg.line()
+					          .x(function(d, i) {
+					              return x(d)
+					          })
+					          .y(function(d, i) {
+					              return y(y_data[i])
+					          })
+
+					      var graph = d3.select("#graph2").append("svg:svg")
+					          .attr("width", w + m[1] + m[3])
+					          .attr("height", h + m[0] + m[2])
+					          .append("svg:g")
+					          .attr("transform", "translate(" + m[3] + "," + m[0] + ")")
+
+					      // var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+					      // graph.append("svg:g")
+					      //     .attr("class", "x axis")
+					      //     .attr("transform", "translate(0," + (h) + ")")
+					      //     .call(xAxis);
+
+					      // Add the y-axis
+					      var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
+					      graph.append("svg:g")
+					          .attr("class", "y axis")
+					          .attr("transform", "translate(-25,0)")
+					          .call(yAxisLeft);
+
+					      graph.append("svg:path").attr("d", line(x_data))
+					          .attr("stroke", "#ffffff")
 };
 window.onload = drawGraph();
 window.addEventListener('resize', drawGraph);
