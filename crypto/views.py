@@ -26,5 +26,6 @@ def index(request):
         'ethValues': ethValues,
         'prediction': prediction,
         'predictedValue': int(predictedValue),
+        'currentValue': int(ethValues[len(ethValues)-1])
     }
     return HttpResponse(loader.get_template('crypto/index.html').render(c))

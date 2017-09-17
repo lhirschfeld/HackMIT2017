@@ -29,12 +29,14 @@
 							<img src="{% static 'images/cgreen.png' %}" width=270 alt="" /><br/><br/><br/>
 							<h2>Cryptonite</h2>
 							<p>Using tweet sentiment analysis, we expect<br />
-							Ethereum's price to <font style="color:#548235">increase</font> today to <font style="color:#548235">${{predictedValue}}</font>.</p>
+							Ethereum's price to <font style="color:#548235">increase</font> today<br/>
+							from <font style="color:#548235">${{currentValue}}</font> to <font style="color:#548235">${{predictedValue}}</font></p>
 							{% else %}
 							<img src="{% static 'images/cred.png' %}" width=270 alt="" /><br/><br/><br/>
 							<h2>Cryptonite</h2>
 							<p>Using tweet sentiment analysis, we expect<br />
-							Ethereum's price to <font style="color:#ff0000">decrease</font> to <font style="color:#ff0000">${{predictedValue}}</font>.</p>
+							Ethereum's price to <font style="color:#ff0000">decrease</font><br/>
+							from <font style="color:#ff0000">${{currentValue}}</font> to <font style="color:#ff0000">${{predictedValue}}</font></p>
 							{% endif %}
 						</div>
 						<a href="#one" class="more scrolly">How it Works</a>
