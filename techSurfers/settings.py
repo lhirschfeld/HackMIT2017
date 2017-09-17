@@ -24,6 +24,7 @@ SECRET_KEY = 'tt6j)a-c%n#v%5c=d2-kk&h7_90dou@um&2&m=3yyd40vtumta'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# test
 
 ALLOWED_HOSTS = ["localhost", "crypt-onite.herokuapp.com"]
 
